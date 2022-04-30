@@ -17,6 +17,7 @@ jobs:
 
       - name: Build website
         run: |
+          cd website
           yarn install --frozen-lockfile
           yarn build
       - name: Release to GitHub Pages
