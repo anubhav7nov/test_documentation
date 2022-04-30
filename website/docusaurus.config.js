@@ -9,7 +9,7 @@ const config = {
   title: 'Test Documentation',
   tagline: 'Testing Documentation using Docusaurus',
   url: 'https://your-docusaurus-test-site.com',
-  baseUrl: '/',
+  baseUrl: '/test_documentation/',
   onBrokenLinks: 'warn',
   onBrokenMarkdownLinks: 'warn',
   favicon: 'img/favicon.ico',
