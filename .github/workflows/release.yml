@@ -2,10 +2,8 @@ name: Release
 
 on:
   push:
-    branches: [main]
-  # push:
-  #   tags:
-  #    - v\d+.\d+.\d+
+    branches:
+      - main
 
 jobs:
   deploy:
@@ -17,27 +15,12 @@ jobs:
         with:
          node-version: '16.x'
          cache: yarn
-      # - name: Add key to allow access to repository
-      #   env:
-      #     SSH_AUTH_SOCK: /tmp/ssh_agent.sock
-      #     GH_PAGES_DEPLOY: ${{ secrets.CI_DEPLOY_KEY }}
-      #   run: |
-      #     mkdir -p ~/.ssh
-      #     ssh-keyscan github.com >> ~/.ssh/known_hosts
-      #     echo "$GH_PAGES_DEPLOY" > ~/.ssh/id_rsa
-      #     chmod 600 ~/.ssh/id_rsa
-      #     cat <<EOT >> ~/.ssh/config
-      #     Host github.com
-      #     HostName github.com
-      #     IdentityFile ~/.ssh/id_rsa
-      #     EOT
 
-     - name: Build website
-         run: |
+      - name: Build website
+        run: |
           cd website
           yarn install --frozen-lockfile
           yarn build
-
       - name: Release to GitHub Pages
         uses: peaceiris/actions-gh-pages@v3
         with:
@@ -45,18 +28,3 @@ jobs:
           publish_dir: ./website/build
           user_name: github-actions[bot]
           user_email: 41898282+github-actions[bot]@users.noreply.github.com
-        # env:
-        #   USE_SSH: true
-        #   GIT_USER: git
-        # run: |
-        #   cd website
-        #   git config --global user.email "actions@gihub.com"
-        #   git config --global user.name "gh-actions"
-        #   if [ -e yarn.lock ]; then
-        #   yarn install --frozen-lockfile
-        #   elif [ -e package-lock.json ]; then
-        #   npm ci
-        #   else
-        #   npm i
-        #   fi
-        #   npx docusaurus deploy
