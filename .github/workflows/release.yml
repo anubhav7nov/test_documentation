@@ -17,13 +17,12 @@ jobs:
 
       - name: Build website
         run: |
-          cd website
           yarn install --frozen-lockfile
           yarn build
       - name: Release to GitHub Pages
         uses: peaceiris/actions-gh-pages@v3
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: ./website/build
+          publish_dir: ./build
           user_name: github-actions[bot]
           user_email: 41898282+github-actions[bot]@users.noreply.github.com
