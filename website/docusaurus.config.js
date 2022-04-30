@@ -13,7 +13,7 @@ const config = {
   onBrokenLinks: 'warn',
   onBrokenMarkdownLinks: 'warn',
   favicon: 'img/favicon.ico',
-  organizationName: 'wizardlabs', // Usually your GitHub org/user name.
+  organizationName: 'anubhav7nov', // Usually your GitHub org/user name.
   projectName: 'test_documentation', // Usually your repo name.
 
   presets: [
