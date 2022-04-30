@@ -15,6 +15,7 @@ const config = {
   favicon: 'img/favicon.ico',
   organizationName: 'anubhav7nov', // Usually your GitHub org/user name.
   projectName: 'test_documentation', // Usually your repo name.
+  deploymentBranch: 'main',
 
   presets: [
     [
