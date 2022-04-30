@@ -2,11 +2,13 @@ name: Release
 
 on:
   push:
-    tags:
-     - v\d+.\d+.\d+
+    branches: [main]
+  # push:
+  #   tags:
+  #    - v\d+.\d+.\d+
 
 jobs:
-  release-docs:
+  deploy:
     name: Publish GH Pages
     runs-on: ubuntu-latest
     steps:

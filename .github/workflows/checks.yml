@@ -2,9 +2,12 @@ name: checks
 
 on:
   push:
-    branches: [main]
-  pull_request:
-    branches: [main]
+    tags:
+     - v\d+.\d+.\d+
+  # push:
+  #   branches: [main]
+  # pull_request:
+  #   branches: [main]
 
 
 jobs:
