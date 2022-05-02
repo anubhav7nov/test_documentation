@@ -40,6 +40,7 @@ function Feature({Svg, title, description}) {
     <div className={clsx('col col--4')}>
       <div className="text--center">
         <Svg className={styles.featureSvg} role="img" />
+        href: 'https://github.com/facebook/docusaurus'
       </div>
       <div className="text--center padding-horiz--md">
         <h3>{title}</h3>
